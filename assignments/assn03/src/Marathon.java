@@ -1,21 +1,21 @@
 public class Marathon {
     public static void main(String[] arguments) {
         String[] names = {
-            "Elena", "Thomas", "Hamilton", "Suzie",
-            "Phil", "Matt", "Alex", "Emma",
-            "John", "James", "Jane", "Emily",
-            "Daniel", "Neda", "Aaron", "Kate"
+                "Elena", "Thomas", "Hamilton", "Suzie",
+                "Phil", "Matt", "Alex", "Emma",
+                "John", "James", "Jane", "Emily",
+                "Daniel", "Neda", "Aaron", "Kate"
         };
         int[] times = {
-            341, 273, 278, 329,
-            445, 402, 388, 275,
-            243, 334, 412, 393,
-            299, 343, 317, 265
+                341, 273, 278, 329,
+                445, 402, 388, 275,
+                243, 334, 412, 393,
+                299, 343, 317, 265
         };
-        
-        int firstIdx = firstRunnerIdx(times);
-        int secondIdx = secondRunnerIdx(times);
-        
+
+        int firstRunnerIdx = getMinIdx(times);
+        int secondRunnerIdx = getSecondMinIdx(times);
+
         System.out.println("Boston Marathon");
         System.out.println("| Name \t| Time(min)\t| ");
         System.out.println("-".repeat(25));
@@ -23,44 +23,52 @@ public class Marathon {
             System.out.printf("| %s \t| %d \t| %n", names[i], times[i]);
         }
         System.out.println("-".repeat(40));
-        System.out.printf("the first  fastest runner: %s (%d) %n", names[firstIdx], times[firstIdx]);
-        System.out.printf("the second fastest runner: %s (%d) %n", names[secondIdx], times[secondIdx]);
+        System.out.printf("the first  fastest runner: %s (%d) %n", names[firstRunnerIdx], times[firstRunnerIdx]);
+        System.out.printf("the second fastest runner: %s (%d) %n", names[secondRunnerIdx], times[secondRunnerIdx]);
         System.out.println("-".repeat(40));
     }
 
     /**
-     * return the index of the fastest runner.
+     * return the index of the smallest value.
      *
-     * @param times every runner's time
-     * @return the index corresponding to the person with the lowest time
+     * @param values an array of values
+     * @return the index of the smallest value
+     * @throws IllegalArgumentException if The length of array is less than 1
      */
-    private static int firstRunnerIdx(int[] times) {
-        int firstIdx = 0;
-        for (int i = 0; i < times.length; i++) {
-            if (times[i] < times[firstIdx]) {
-                firstIdx = i;
+    public static int getMinIdx(int[] values) {
+        if (values.length < 1) {
+            throw new IllegalArgumentException("The length of array is less than 1.");
+        }
+        int minIdx = 0;
+        for (int i = 0; i < values.length; i++) {
+            if (values[i] < values[minIdx]) {
+                minIdx = i;
             }
         }
-        return firstIdx;
+        return minIdx;
     }
 
     /**
-     * return the index of the second-fastest runner.
+     * return the index of the second-smallest value.
      *
-     * @param times every runner's time
-     * @return the index corresponding to the person with the second-lowest time
+     * @param values an array of values
+     * @return the index of the second-smallest value
+     * @throws IllegalArgumentException if the length of array is less than 2
      */
-    private static int secondRunnerIdx(int[] times) {
-        int firstIdx = 0;
-        int secondIdx = 0;
-        for (int i = 0; i < times.length; i++) {
-            if (times[i] < times[firstIdx]) {
-                secondIdx = firstIdx;
-                firstIdx = i;
-            } else if (times[i] < times[secondIdx]) {
-                secondIdx = i;
+    public static int getSecondMinIdx(int[] values) {
+        if (values.length < 2) {
+            throw new IllegalArgumentException("The length of array is less than 2.");
+        }
+        int minIdx = getMinIdx(values);
+        int secondMinIdx = 0;
+        for (int i = 0; i < values.length; i++) {
+            if (i == minIdx) {
+                continue;
+            }
+            if (values[i] < values[secondMinIdx]) {
+                secondMinIdx = i;
             }
         }
-        return secondIdx;
+        return secondMinIdx;
     }
 }
