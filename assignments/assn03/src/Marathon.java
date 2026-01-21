@@ -12,6 +12,10 @@ public class Marathon {
             243, 334, 412, 393,
             299, 343, 317, 265
         };
+        
+        int firstIdx = firstRunnerIdx(times);
+        int secondIdx = secondRunnerIdx(times);
+        
         System.out.println("Boston Marathon");
         System.out.println("| Name \t| Time(min)\t| ");
         System.out.println("-".repeat(25));
@@ -19,8 +23,6 @@ public class Marathon {
             System.out.printf("| %s \t| %d \t| %n", names[i], times[i]);
         }
         System.out.println("-".repeat(40));
-        int firstIdx = firstRunnerIdx(times);
-        int secondIdx = secondRunnerIdx(times);
         System.out.printf("the first  fastest runner: %s (%d) %n", names[firstIdx], times[firstIdx]);
         System.out.printf("the second fastest runner: %s (%d) %n", names[secondIdx], times[secondIdx]);
         System.out.println("-".repeat(40));
