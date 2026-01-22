@@ -12,9 +12,11 @@ public class Counter {
     public static void main(String[] args) {
         Counter counter1 = new Counter();
         Counter counter2 = new Counter();
+        
         counter1.increment();
         counter1.increment();
         counter2.increment();
+        
         System.out.println("counter1.myCount = " + counter1.myCount);
         System.out.println("counter1.ourCount = " + Counter.ourCount);
         System.out.println("counter2.myCount = " + counter2.myCount);
