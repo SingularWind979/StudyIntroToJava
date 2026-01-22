@@ -12,6 +12,7 @@ public class HashMapExample {
         nameEmailMap.put("Adam", "email3@mit.edu");
 
         System.out.println("nameEmailMap.size() = " + nameEmailMap.size());
+        
         System.out.println("nameEmailMap.get(\"Eugene\") = " + nameEmailMap.get("Eugene"));
 
         nameEmailMap.remove("Evan");
