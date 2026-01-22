@@ -46,7 +46,7 @@ public class Library {
     }
 
     /**
-     * Adds book to the library
+     * Adds a book to the library
      *
      * @param book the book to be added
      */
@@ -55,7 +55,7 @@ public class Library {
     }
 
     /**
-     * Finds book by title
+     * Finds s book by title
      *
      * @param title the title of the wanted book
      * @return index of the book, -1 when not found
@@ -70,7 +70,7 @@ public class Library {
     }
 
     /**
-     * Borrows the book via title
+     * Borrows a book by title
      *
      * @param title the title of the book to be borrowed
      */
@@ -89,7 +89,7 @@ public class Library {
     }
 
     /**
-     * Returns the book via title
+     * Returns a book by title
      *
      * @param title the title of the book to be returned
      */
