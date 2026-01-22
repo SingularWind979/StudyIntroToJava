@@ -1,5 +1,5 @@
 public class Book {
-    private final String title;
+    private String title;
     private boolean isBorrowed;
 
     /**
@@ -29,7 +29,7 @@ public class Book {
     /**
      * Judges if the book is borrowed
      *
-     * @return true if the book is rented, false otherwise
+     * @return true if the book is borrowed, false otherwise
      */
     public boolean isBorrowed() {
         return isBorrowed;
