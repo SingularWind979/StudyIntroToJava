@@ -5,7 +5,7 @@ public class Book {
     /**
      * Creates a new Book with title
      *
-     * @param title title of the book
+     * @param title the title of the book
      */
     public Book(String title) {
         this.title = title;
