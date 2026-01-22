@@ -1,3 +1,5 @@
+package square;
+
 public class Square1 {
     public static void main(String[] args) {
         int value = 2;

@@ -1,3 +1,5 @@
+package square;
+
 public class SquareChange {
     public static void main(String[] args) {
         int x = 5;

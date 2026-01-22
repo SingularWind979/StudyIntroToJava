@@ -1,3 +1,5 @@
+package libraries;
+
 public class Library {
     private static final int OPEN_TIME = 9;
     private static final int CLOSE_TIME = 17;
@@ -28,7 +30,7 @@ public class Library {
      * Prints the address of the library
      */
     public void printAddress() {
-        System.out.println("Address: " + address);
+        System.out.println("address: " + address);
     }
 
     /**
@@ -98,7 +100,7 @@ public class Library {
         System.out.printf("You successfully returned book %s.%n", title);
     }
 
-    // Small test of the Library class
+    // Small test of the library class
     public static void main(String[] args) {
         // Create two libraries
         Library firstLibrary = new Library("10 Main St.");
@@ -115,7 +117,9 @@ public class Library {
         printOpeningHours();
         System.out.println();
         System.out.println("Library addresses:");
+        System.out.print("Library 1 ");
         firstLibrary.printAddress();
+        System.out.print("Library 2 ");
         secondLibrary.printAddress();
         System.out.println();
 

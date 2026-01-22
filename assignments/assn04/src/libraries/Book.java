@@ -1,9 +1,11 @@
+package libraries;
+
 public class Book {
     private String title;
     private boolean isBorrowed;
 
     /**
-     * Creates a new Book with title
+     * Creates a new book with title
      *
      * @param title the title of the book
      */

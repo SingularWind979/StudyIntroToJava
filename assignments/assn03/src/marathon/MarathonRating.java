@@ -1,4 +1,6 @@
-public class Marathon {
+package marathon;
+
+public class MarathonRating {
     public static void main(String[] arguments) {
         String[] names = {
             "Elena", "Thomas", "Hamilton", "Suzie",
