@@ -1,3 +1,5 @@
+package baby;
+
 public class Baby {
     String name;
     boolean isMale;
