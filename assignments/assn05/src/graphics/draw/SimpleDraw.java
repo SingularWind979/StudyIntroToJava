@@ -89,7 +89,7 @@ public class SimpleDraw extends JPanel implements Runnable {
         long lastTime = System.currentTimeMillis();
         while (animateEnabled()) {
             long currentTime = System.currentTimeMillis();
-            // Repaint the panel at a delay of FRMAE_DELAY if animation is enabled
+            // Repaints the panel at a delay of FRMAE_DELAY if animation is enabled
             if (currentTime - lastTime >= FRAME_DELAY) {
                 repaint();
                 lastTime = currentTime;
