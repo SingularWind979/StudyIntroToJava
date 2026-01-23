@@ -48,7 +48,7 @@ public class DrawGraphics {
      * @param surface The surface where the content will be drawn.
      */
     public void draw(Graphics surface) {
-        // Draws a testing line
+        // Draws testing shapes
         surface.drawLine(50, 50, 250, 250);
         ((Graphics2D) surface).setStroke(new BasicStroke(20.0f));
         surface.setColor(Color.CYAN);
