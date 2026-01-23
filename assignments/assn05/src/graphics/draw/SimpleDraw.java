@@ -89,7 +89,7 @@ public class SimpleDraw extends JPanel implements Runnable {
         long lastTime = System.currentTimeMillis();
         while (animateEnabled()) {
             long currentTime = System.currentTimeMillis();
-            // Repaint the panel if animation is enabled
+            // Repaint the panel at a delay of FRMAE_DELAY if animation is enabled
             if (currentTime - lastTime >= FRAME_DELAY) {
                 repaint();
                 lastTime = currentTime;
@@ -104,8 +104,11 @@ public class SimpleDraw extends JPanel implements Runnable {
      */
     private static SimpleDraw createContent() {
         SimpleDraw content = new SimpleDraw(new DrawGraphics());
+        
+        // Basic content settings
         content.setBackground(BG_COLOR);
         content.setPreferredSize(DRAW_SIZE);
+        
         return content;
     }
 
@@ -117,37 +120,45 @@ public class SimpleDraw extends JPanel implements Runnable {
      */
     private static JFrame createWindow(SimpleDraw content) {
         JFrame window = new JFrame("Graphics!");
+
+        // Attaches content panel to the window frame
         window.setContentPane(content);
+        
+        // Basic window settings
         window.setBackground(BG_COLOR);
         window.setPreferredSize(DRAW_SIZE);
         window.setVisible(true);
         window.setResizable(false);
         window.pack();
+
+        // Adds a WindowListener to the window to handle various window events
         window.addWindowListener(new WindowAdapter() {
+            // This method is called when the window is about to close, exit the app
             @Override
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
             }
-
+            // This method is called when the window is restored from the minimized state, restart the app
             @Override
             public void windowDeiconified(WindowEvent e) {
                 content.start();
             }
-
+            // This method is called when the window is minimized, stop the app
             @Override
             public void windowIconified(WindowEvent e) {
                 content.stop();
             }
         });
+        
         return window;
     }
 
     public static void main(String[] args) {
-        // Create the window frame and content panel
+        // Creates the window frame and content panel
         SimpleDraw content = createContent();
         JFrame window = createWindow(content);
 
-        // Start the animation loop of content in a separate thread
+        // Starts the animation loop of content in a separate thread
          new Thread(content).start();
     }
 }
