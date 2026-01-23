@@ -48,16 +48,19 @@ public class DrawGraphics {
      * @param surface The surface where the content will be drawn.
      */
     public void draw(Graphics surface) {
-        // Draws a testing line
+        // Draws testing shapes
         surface.drawLine(50, 50, 250, 250);
+        ((Graphics2D) surface).setStroke(new BasicStroke(20.0f));
+        surface.setColor(Color.CYAN);
+        surface.fillRect(150, 150, 25, 40);
+        surface.setColor(Color.PINK);
+        surface.fillOval(40, 40, 25, 30);
+        surface.setColor(Color.ORANGE);
+        surface.drawString("Mr. And Mrs. Smith", 100, 100);
 
-        // Casts to Graphics2D for better rendering options
-        Graphics2D g2d = (Graphics2D) surface;
-        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
-        // Draws each shape
+        // Draws each shape (BoundingBox) in the shapes list
         for (Shape shape : shapes) {
-            shape.draw(g2d);
+            shape.draw(surface);
         }
     }
 }

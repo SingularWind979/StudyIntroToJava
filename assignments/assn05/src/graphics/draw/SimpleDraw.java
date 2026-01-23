@@ -50,6 +50,7 @@ public class SimpleDraw extends JPanel implements Runnable {
 
         // Casting Graphics to Graphics2D for advanced drawing features
         Graphics2D g2d = (Graphics2D) g;
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
         // Delegate the actual drawing to the DrawGraphics object
         drawer.draw(g2d);
@@ -159,6 +160,6 @@ public class SimpleDraw extends JPanel implements Runnable {
         JFrame window = createWindow(content);
 
         // Starts the animation loop of content in a separate thread
-         new Thread(content).start();
+        new Thread(content).start();
     }
 }
