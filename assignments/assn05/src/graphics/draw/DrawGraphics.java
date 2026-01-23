@@ -31,9 +31,9 @@ public class DrawGraphics {
     }
 
     /**
-     * Draw the contents of the window on surface.
+     * Draws the content of the window on surface.
      *
-     * @param surface The surface where the contents will be drawn.
+     * @param surface The surface where the content will be drawn.
      */
     public void draw(Graphics surface) {
         surface.drawLine(50, 50, 250, 250);
