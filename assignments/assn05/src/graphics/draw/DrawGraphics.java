@@ -58,7 +58,7 @@ public class DrawGraphics {
         surface.setColor(Color.ORANGE);
         surface.drawString("Mr. And Mrs. Smith", 100, 100);
 
-        // Draws each shape
+        // Draws each shape (BoundingBox) in the shapes list
         for (Shape shape : shapes) {
             shape.draw(surface);
         }
