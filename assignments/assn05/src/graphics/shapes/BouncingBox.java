@@ -10,7 +10,7 @@ import java.awt.*;
  * @author SingularWind
  */
 public class BouncingBox extends Shape {
-    // Fixed size of the box.
+    // Fixed size of the box
     public static final int BOX_SIZE = 20;
 
     /**
@@ -30,7 +30,6 @@ public class BouncingBox extends Shape {
      */
     public BouncingBox(int startX, int startY, Color startColor) {
         super(startX, startY, startColor);
-        setVelocity(0, 0);
     }
 
     /**
@@ -49,11 +48,11 @@ public class BouncingBox extends Shape {
         ((Graphics2D) surface).setStroke(new BasicStroke(3.0f));
         surface.drawRect(pos.x - BOX_SIZE / 2, pos.y - BOX_SIZE / 2, BOX_SIZE, BOX_SIZE);
 
-        // Move the center of the object each time we draw it
+        // Moves the center of the object each time we draw it
         pos.x += vel.x;
         pos.y += vel.y;
 
-        // when the box hit the bound, reverse the direction
+        // Reverses the direction when the box hit the bound 
         if (xHitBound()) {
             vel.x *= -1;
         }
@@ -73,7 +72,7 @@ public class BouncingBox extends Shape {
     }
 
     /**
-     * Judge if the box hit the y direction bounder.
+     * Judges if the box hit the y direction bounder.
      *
      * @return true if hit the y direction bounder of the surface, false otherwise.
      */
