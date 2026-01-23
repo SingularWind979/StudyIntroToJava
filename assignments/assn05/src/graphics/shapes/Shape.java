@@ -16,6 +16,7 @@ public abstract class Shape {
             this.y = y;
         }
     }
+    
     Tuple pos;
     Tuple vel;
     Color color;
