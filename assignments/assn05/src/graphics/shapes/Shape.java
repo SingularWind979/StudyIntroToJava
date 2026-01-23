@@ -24,7 +24,7 @@ public abstract class Shape {
     /**
      * Initializes a new shape with default settings.
      */
-    public Shape () {
+    public Shape() {
         this(0, 0, Color.WHITE);
     }
 

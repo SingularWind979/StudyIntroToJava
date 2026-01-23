@@ -50,14 +50,17 @@ public class DrawGraphics {
     public void draw(Graphics surface) {
         // Draws a testing line
         surface.drawLine(50, 50, 250, 250);
-
-        // Casts to Graphics2D for better rendering options
-        Graphics2D g2d = (Graphics2D) surface;
-        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        ((Graphics2D) surface).setStroke(new BasicStroke(20.0f));
+        surface.setColor(Color.CYAN);
+        surface.fillRect(150, 150, 25, 40);
+        surface.setColor(Color.PINK);
+        surface.fillOval(40, 40, 25, 30);
+        surface.setColor(Color.ORANGE);
+        surface.drawString("Mr. And Mrs. Smith", 100, 100);
 
         // Draws each shape
         for (Shape shape : shapes) {
-            shape.draw(g2d);
+            shape.draw(surface);
         }
     }
 }
