@@ -15,7 +15,6 @@ public interface Drawable {
      */
     void draw(Graphics surface);
 
-
     /**
      * Sets the color of the shape.
      *
