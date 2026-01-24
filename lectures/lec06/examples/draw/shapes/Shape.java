@@ -20,6 +20,10 @@ public abstract class Shape implements Drawable, Moveable {
     private Vector2D size;
     private Color clr;
 
+    /**
+     * Constructs a {@code Shape} with default position, velocity, size, and color.
+     * Initializes position, velocity, size to (0, 0), and color to black.
+     */
     public Shape() {
         pos = new Vector2D(0, 0);
         vel = new Vector2D(0, 0);
@@ -27,6 +31,14 @@ public abstract class Shape implements Drawable, Moveable {
         clr = new Color(0, 0, 0, 0);
     }
 
+    /**
+     * Constructs a {@code Shape} with specified position, velocity, size, and color.
+     *
+     * @param pos  the position of the shape
+     * @param vel  the velocity of the shape
+     * @param size the size of the shape
+     * @param clr  the color of the shape
+     */
     public Shape(Vector2D pos, Vector2D vel, Vector2D size, Color clr) {
         this.pos = pos;
         this.vel = vel;
